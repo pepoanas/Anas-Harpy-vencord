@@ -1,0 +1,39 @@
+/* 1. تعريف أنيميشن الألوان المتحركة */
+@keyframes rainbow-glow {
+    0% { border-color: #ff0000; box-shadow: 0 0 8px #ff0000; filter: hue-rotate(0deg); }
+    100% { border-color: #ff0000; box-shadow: 0 0 8px #ff0000; filter: hue-rotate(360deg); }
+}
+
+/* 2. تطبيق التوهج على أيقونات السيرفرات */
+.wrapper_c5f96a foreignObject, 
+.wrapper_c5f96a circle,
+.listItem-GuPuDH foreignObject {
+    border: 2px solid transparent !important;
+    animation: rainbow-glow 4s linear infinite !important;
+    border-radius: 16px !important; /* لضمان أن الحواف مستديرة مع النور */
+}
+
+/* 3. تطبيق التوهج على الفولدرات (وهي مقفولة) */
+.folder_bc7085 {
+    border: 2px solid transparent !important;
+    animation: rainbow-glow 4s linear infinite !important;
+    border-radius: 16px !important;
+}
+
+/* 4. تطبيق التوهج على السيرفرات اللي داخل الفولدر المفتوح */
+.expandedFolderBackground_bc7085 {
+    border: 1px solid transparent !important;
+    animation: rainbow-glow 6s linear infinite !important;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 5. تحسين شكل السيرفرات اللي فيها رسائل جديدة عشان تنور أقوى */
+.item_c4fafa {
+    background-color: white !important; /* النقطة البيضاء الجانبية */
+    box-shadow: 0 0 10px white, 0 0 20px var(--main-color) !important;
+}
+
+/* تأكيد أن الحواف تظهر بوضوح */
+.wrapper_c5f96a, .folder_bc7085, .expandedFolderBackground_bc7085 {
+    overflow: visible !important; /* عشان النور يبان بره الدائرة */
+}
